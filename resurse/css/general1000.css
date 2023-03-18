@@ -1,0 +1,40 @@
+@media screen and (max-width:1000px){
+  .container {
+    max-width:50%;
+  }
+  
+  body{
+    --spatiere-pagina:10px;
+    --padding-sectiune:2px;
+    margin:0px;
+}
+
+#grid-pagina> * {
+    margin-bottom: 15px;
+    font-size: smaller;
+}
+
+#link-top{
+    width: 45px;
+    height: 45px;
+}
+
+#sageata{
+    font-size:40px;
+}
+.container-iframe{
+    width: 600px;
+}
+html{
+    transition: all 0.5s ease-in-out;
+    font-size: 14px;
+}
+.taburi-iframe{
+    justify-content: left;
+    margin-left:270px;
+}
+
+.fa-solid{
+    animation: none;
+}
+}

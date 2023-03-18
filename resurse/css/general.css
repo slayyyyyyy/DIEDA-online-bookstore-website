@@ -1,0 +1,129 @@
+body{
+    --culoare-fundal:rgb(255, 248, 219);
+    --culoare-text:rgb(159, 46, 32);
+    --culoare-fundal-inchis:#FFA929;
+    --culoare-border: #e8aa1a96;
+    --culoare-highlight: #FFD21C;
+    --spatiere-pagina:50px;
+    --padding-sectiune:5px;
+    --culoare-headings: #ff3e1c; 
+}
+
+body{
+    background-color: var(--culoare-fundal);
+    color:var(--culoare-text);
+    padding-left:var(--spatiere-pagina);
+    padding-right:var(--spatiere-pagina);
+    /* cu var accesez variabilele */
+    min-width: 450px;
+    margin: 0px;
+    font-family: "Noto Serif";
+}
+
+html{
+  transition: all 0.5s ease-in-out;
+  font-size: 15px;
+}
+
+body.dark{
+    --culoare-fundal:#905805;
+    --culoare-text:white;
+}
+
+h1{
+    font-size: 30px;
+    color: var(--culoare-headings);
+    font-family:'Lucida Handwriting' ;
+}
+
+h2{
+    color: var(--culoare-headings);
+    font-family: 'Lucida Handwriting';
+}
+
+h3{
+    color: #FF641C;
+    font-family: 'Tahoma';
+}
+
+
+
+/* stilizarea tabelului */
+#stilizare-tabel {
+    --c1: #fe0101; /* definirea culorilor pentru borderele tabelului */
+    --c2: #ff8400;
+    --c3: rgba(234, 153, 90, 0.856);
+    max-width: 1000px;
+    border-spacing: 0;
+    /* border-collapse: collapse; */
+  }
+  
+  /* stilul pentru borderul dintre doua coloane */
+  td:not(:first-child):nth-child(even) {  /* not este folosit pentru a incepe de la a doua celula*/
+    border-left: 2px solid var(--c1);
+   /* border-right: 2px solid var(--c1); */
+    border-top: 2px solid var(--c3);
+    border-bottom: 2px solid var(--c3);
+  }
+  
+  td:not(:first-child):nth-child(odd) {
+    border-left: 2px solid var(--c2); 
+    /* border-right: 2px solid var(--c2); */
+    border-top: 2px solid var(--c3);
+    border-bottom: 2px solid var(--c3);
+  }
+  
+/* stilul borderului dintre thead și tbody și dintre tbody și tfoot */
+thead th,
+tbody td,
+tfoot td {
+  border-top: 3px solid #a52222;
+  border-bottom: 3px solid #a52222;
+}
+/* thead th:first-child,
+tbody td:first-child,
+tfoot td:first-child {
+  border-left: 3px solid #a52222;
+}
+thead th:last-child,
+tbody td:last-child,
+tfoot td:last-child {
+  border-right: 3px solid #a52222;
+} */
+
+/* stilul pentru celulele cu Solitaire si Enigma Otiliei */
+
+table tbody tr>td.caz-special1{
+
+    border-left: 2px solid var(--c1) !important; /* !important ar trebui evitat cat mai mult, cauta o solutie sa il scoti */
+    border-top: 2px solid var(--c3);
+    border-bottom: 2px solid var(--c3);
+} 
+
+table tbody tr>td.caz-special2{
+    border-left: 2px solid var(--c2) !important;
+    border-top: 2px solid var(--c3);
+    border-bottom: 2px solid var(--c3);
+}
+
+
+  /* stilul pentru box-shadow la hover */
+  tr:hover {
+    box-shadow: 0px 0px 10px 5px rgba(111, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease-in-out;
+  }
+
+  tfoot{
+    text-align: center;
+  }
+  
+  /* stilul pentru containerul cu scrollbar */
+  .container {
+    overflow-x: auto;
+    /* max-width:50%; */
+  }
+
+ .fa-solid{
+  animation: fa-beat 2s infinite linear;
+
+ }

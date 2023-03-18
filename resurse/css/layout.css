@@ -1,0 +1,57 @@
+#grid-pagina>*{
+   /*  border-left:3px dashed var(--culoare-border);
+    border-top: 3px dashed var(--culoare-border);*/
+    border: 3px dashed var(--culoare-border);
+    padding:var(--padding-sectiune);
+}
+#grid-pagina{
+    display: grid;
+    grid-gap: 10px;
+    /* margin-bottom: 1%;  */
+    grid-template-columns:repeat(3,1fr);/*face coloanele egale  */
+    grid-template-areas:"z-welcome z-welcome z-welcome" 
+                        "z-cos z-produse z-reduceri"        
+                        "z-oferte z-produse z-reduceri"
+                        "z-oferte z-tabel z-aparitii"
+                        "z-faq z-faq z-faq"  
+                        
+                        
+                                
+    ;
+}
+
+
+#welcome{
+    grid-area: z-welcome;
+    
+}
+.container{
+    grid-area: z-tabel;
+}
+#reduceri{
+    grid-area: z-reduceri;
+}
+ 
+#oferte{
+    grid-area: z-oferte;
+}
+ 
+#produse{
+    grid-area: z-produse;
+}
+#aparitii{
+    grid-area: z-aparitii;
+}
+#cos{
+    grid-area: z-cos;
+}
+ 
+#FAQ{
+    grid-area: z-faq;
+}
+
+.grid-item {
+    
+    padding: 20px;
+    font-size: 1em;
+}
