@@ -22,11 +22,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+            <!-- <link rel="stylesheet" href="resurse/css/resetare.css" type="text/css" > -->
             <link rel="stylesheet" href="resurse/css/general.css" type="text/css" >
             <link rel="stylesheet" href="resurse/css/butoane.css" type="text/css" >
             <link rel="stylesheet" href="resurse/css/layout.css" type="text/css" >
             <link rel="stylesheet" href="resurse/css/general700.css" type="text/css" >
             <link rel="stylesheet" href="resurse/css/general1000.css" type="text/css" >
+            <link rel="stylesheet" href="resurse/css/nav.css" type="text/css" >
+            <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" >
+            <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" >
+            <link rel="stylesheet" href="resurse/css/printare.css" type="text/css" >
      
 
     </head>
@@ -36,24 +41,28 @@
         <h1>HOME - DIEDA</h1>
             </section>
         <nav>
-            <ul>
-                <li><a href="#acasa"><div>ACASA <i class="fa-solid fa-house"></i></div></a>
-                <ul>
-                    <li><a href="#reduceri">Reduceri</a></li>
-                    <li><a href="#oferte">Oferta saptamanii</a></li>
-                    <li><a href="#aparitii">Aparitii noi</a></li>
+            <label id="hamburger" for="checkbox-meniu">
+                <img src="./resurse/imagini/hamburger.png" alt="menu">
+            </label>
+            <input id="checkbox-meniu" type="checkbox">
+            <ul class="meniu">
+                <li><div id="ac">ACASA <i class="fa-solid fa-house"></i></div><div id="ac-mediu"><i class="fa-solid fa-house"></i></div></a>
+                <ul class="submenu">
+                    <li><a href="#reduceri"><i id="arrow" class="fa-solid fa-arrow-right"></i> Reduceri</a></li>
+                    <li><a href="#oferte"><i id="arrow" class="fa-solid fa-arrow-right"></i> Oferta saptamanii</a></li>
+                    <li><a href="#aparitii"><i id="arrow" class="fa-solid fa-arrow-right"></i> Aparitii noi</a></li>
                 </ul></li>
                 <li><a href="#produse">Produse <i class="fa-solid fa-book"></i></a>
-                <ul>
-                    <li><a href="#carti">Carti</a></li>
-                    <li><a href="#albume">Albume</a></li>
-                    <li><a href="#boardgames">Jocuri de societate</a></li>
-                    <li><a href="#merch">Merchandise</a></li>
-                    <li><a href="#scolar">Scolare</a></li>
+                <ul class="submenu">
+                    <li><a href="#"><i id="arrow" class="fa-solid fa-arrow-right"></i> Carti</a></li>
+                    <li><a href="#"><i id="arrow" class="fa-solid fa-arrow-right"></i> Albume</a></li>
+                    <li><a href="#"><i id="arrow" class="fa-solid fa-arrow-right"></i> Jocuri de societate</a></li>
+                    <li><a href="#"><i id="arrow" class="fa-solid fa-arrow-right"></i> Merchandise</a></li>
+                    <li><a href="#"><i id="arrow" class="fa-solid fa-arrow-right"></i> Scolare</a></li>
                 </ul>
                 </li>
-                <li><a href="#cos">Cosul de cumpărături <i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href="#cont">Contul meu <i class="fa-solid fa-user"></i></a></li>
+                <li><a href="#">Cosul de cumpărături <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#">Contul meu <i class="fa-solid fa-user"></i></a></li>
                 <li><a href="#FAQ">Intrebari frecvente <i class="fa-solid fa-question"></i></a></li>
             </ul>
         </nav>
@@ -61,8 +70,8 @@
     <main>
         <div id="grid-pagina">
         <section id="welcome" class="grid-item">
-            <h2>Bine ati venit! <i class="fa-solid fa-heart fa-beat"></i></h2>
-            <p>Librăriile DIEDA sunt cele mai extinse librării din țară, oferind prețuri avantajoase la cele mai noi și discutate titluri de carte, jocuri de pierdut vremea cu prietenii și tot felul de merchandise. Pe site-ul nostru puteți găsi atât reducerile din librării, cât și promoții și oferte exclusive online. Vă așteptăm cu drag la cafeluță cu o carte! <i class="fa-solid fa-heart"></i> </p>
+            <h2>Bine ati venit! <i id="inima" class="fa-solid fa-heart fa-beat"></i></h2>
+            <p>Librăriile DIEDA sunt cele mai extinse librării din țară, oferind prețuri avantajoase la cele mai noi și discutate titluri de carte, jocuri de pierdut vremea cu prietenii și tot felul de merchandise. Pe site-ul nostru puteți găsi atât reducerile din librării, cât și promoții și oferte exclusive online. Vă așteptăm cu drag la cafeluță cu o carte! <i id="inima" class="fa-solid fa-heart"></i> </p>
             <picture>
                 <!-- il ia pe primul care se potriveste cu query-ul din media-->
                 <source srcset="./resurse/imagini/logo3.png" media="(max-width:700px)">
@@ -261,12 +270,13 @@
                 <a href="https://www.youtube.com/embed/leApDgyg9xE" target="ifr-video" >THE CROWN - book trailer</a>
                 <a href="https://www.youtube.com/embed/07i6PO1gP10" target="ifr-video" >THE SIREN - book trailer</a><br>
             </div>
-        
+          <p id="watermark"></p>
         </main>
         <footer>
             <a href="#" id="link-top" title="Inapoi sus">
                 <div id="sageata">&#129081;</div>
              </a>
+             <p id="banner">Acesta este un proiect școlar!</p>
              
             <address>
                 <a href="mailto:dariajane@gmail.com" target="_blank">Trimite un mail</a><br>
