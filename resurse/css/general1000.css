@@ -37,4 +37,9 @@ html{
 .fa-solid{
     animation: none;
 }
+
+img, iframe, .container-iframe, .taburi-iframe, figcaption, video{
+    width: 450px;
+  }
+  
 }

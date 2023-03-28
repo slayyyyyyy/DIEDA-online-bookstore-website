@@ -1,0 +1,18 @@
+@media screen and (max-width:1000px){
+body{
+    --inaltime-meniu:45px;
+    --latime-buton:120px;   
+}
+
+#ac{
+    display: none;
+}
+
+#ac-mediu{
+    display: block;
+}
+
+ul.meniu li{
+    font-size:9px;
+}
+    }

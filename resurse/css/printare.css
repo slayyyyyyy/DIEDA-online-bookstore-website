@@ -1,0 +1,149 @@
+@media print {
+
+	#banner{
+		position: absolute;
+		display: block;
+		text-align: center;
+		width:70%;
+		margin-left:9%;
+        margin-right:15%;
+		bottom:0;
+		overflow: visible;
+        border: 4px inset black;
+	}
+
+    img, iframe, .container-iframe, .taburi-iframe, figcaption, video, #link-top{
+        display: none;
+    }
+    #grid-pagina{
+        display: block;
+        grid-gap: 20px;
+    }
+
+    #grid-pagina>*{
+        border: 3px solid black;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    h1{
+		margin-left: 50%;
+		text-align:center;
+		margin-left:0cm;
+	}
+    ul.meniu{
+        display: block;
+        page-break-after: always;
+    }
+
+    footer{
+        page-break-before: always;
+    }
+
+    .submenu{
+        display: none;
+    }
+
+    td:not(:first-child):nth-child(odd) {  /* not este folosit pentru a incepe de la a doua celula*/
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+      }
+      
+    td:not(:first-child):nth-child(even){
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+      
+    /* stilul borderului dintre thead și tbody și dintre tbody și tfoot */
+    thead th,
+    tbody td,
+    tfoot td {
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+    }
+
+    table tbody tr>td.caz-special1{
+
+        border-left: 2px solid black !important; /* !important ar trebui evitat cat mai mult, cauta o solutie sa il scoti */
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    } 
+    
+    table tbody tr>td.caz-special2{
+        border-left: 2px solid black !important;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    
+    	
+	#watermark
+		{	
+			display: block;
+			position: fixed;/*apare pe toate paginile*/
+			bottom:0;
+			color:rgb(0, 0, 0);
+			right:0;
+		}
+    #watermark::after{
+			
+			opacity:0.4;
+			padding:5px;
+            text-align: center;
+            font-weight: bold;
+			display: block;
+            width: 4cm;
+            height: 1cm;
+			background: white;
+			border:3px solid black;
+			border-radius:10px;
+			content:"Andreea Gurzu";
+}
+
+body,h1,h2,h3,h4{
+    background-color: white;
+    color: black;
+}
+.fa-solid{
+    display: none;
+}
+
+ul.meniu li a:hover{
+    box-shadow:none;
+    transition: none;
+}
+
+ul.meniu li{
+    border:none;
+    box-shadow:none;
+}
+ul.meniu li a{
+    color:black;
+}
+
+#ac{
+    color:black;
+}
+
+tr:hover {
+    box-shadow: none;
+    transition: none;
+  }
+
+  @page :left {
+    margin-left: 3cm; 
+    margin-right: 1cm;
+  }
+  
+  @page :right {
+    margin-left: 1cm; 
+    margin-right: 3cm; 
+  }
+   nav{
+    border:none;
+   }
+}

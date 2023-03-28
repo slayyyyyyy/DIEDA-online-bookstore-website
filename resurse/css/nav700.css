@@ -1,0 +1,39 @@
+@media screen and (max-width:700px) {
+    
+
+
+body{
+    --inaltime-meniu:40px;
+    --latime-buton:100%;
+     overflow-x: hidden;
+}
+
+
+#hamburger{
+    display: block;
+    margin:0;
+
+}
+
+#hamburger>img{
+    
+    height: var(--inaltime-meniu);
+    width:auto;
+    display: block;
+    margin:0;
+}
+
+ul.meniu{
+    display: none;
+}
+
+#checkbox-meniu:checked+ul.meniu{
+    display: block;
+    animation-name: animatie_meniu;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform-origin: left top;
+}
+}
