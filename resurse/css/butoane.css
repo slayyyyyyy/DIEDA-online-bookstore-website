@@ -41,7 +41,7 @@
     flex-direction: column;
     /* grid-template-columns: 1fr 1fr; */
     /* flex-wrap: wrap; */
-    border: 10px solid #e8aa1a96;
+    border: 10px solid var(--culoare-border);
     border-radius:20px;
     justify-content: center;
     margin-right: 45%;

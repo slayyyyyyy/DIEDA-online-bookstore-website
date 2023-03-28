@@ -1,3 +1,47 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	/* margin: 0; */
+	/* padding: 0; */
+	border: 0;
+	/* font-size: 100%; */
+	/* font: inherit; */
+	/* vertical-align: baseline; */
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/* body {
+	line-height: 1;
+} */
+/* ol, ul {
+	list-style: none;
+} */
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body{
     --culoare-fundal:rgb(255, 248, 219);
     --culoare-text:rgb(159, 46, 32);
@@ -20,6 +64,21 @@ body{
     font-family: "Noto Serif";
 }
 
+header{
+  background-color: #f19c74;
+}
+
+footer{
+  padding-left: var(--spatiere-pagina);
+  background-color: #f68f8f;
+  border: 3px solid rgb(195, 33, 33);
+  border-radius: 1rem;
+}
+
+.grid-item{ /*nu-mi ia culoarea la zona de grid cu tabel, dar o las asa fiindca imi place cum arata*/
+  background-color: #f3db9a;
+}
+
 html{
   transition: all 0.5s ease-in-out;
   font-size: 15px;
@@ -34,11 +93,14 @@ h1{
     font-size: 30px;
     color: var(--culoare-headings);
     font-family:'Lucida Handwriting' ;
+    font-weight: 5px;
+    margin: 10px;
 }
 
 h2{
     color: var(--culoare-headings);
     font-family: 'Lucida Handwriting';
+    font-weight: 5px;
 }
 
 h3{
@@ -46,7 +108,9 @@ h3{
     font-family: 'Tahoma';
 }
 
-
+img, iframe, .container-iframe, .taburi-iframe, figcaption, video{
+  width: 500px;
+}
 
 /* stilizarea tabelului */
 #stilizare-tabel {
@@ -123,7 +187,7 @@ table tbody tr>td.caz-special2{
     /* max-width:50%; */
   }
 
- .fa-solid{
+#inima {
   animation: fa-beat 2s infinite linear;
 
  }
