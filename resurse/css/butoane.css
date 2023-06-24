@@ -97,3 +97,27 @@
     opacity: 1;
     box-shadow: inset 0 0 20px rgba(81, 3, 3, 0.848);
   }
+
+.link:active{
+  border: 1px solid #3e0b0b;
+}
+
+.link:visited{
+  color:rgba(178, 46, 46, 0.848);
+}
+
+  .link {
+  color:#3e0b0b;
+  background-image: radial-gradient(ellipse at 40%,#881b19 0%, #881b19 40%, transparent 80%, transparent 100%);
+	background-position: center;
+	background-size: 0;
+  border-radius: 50%;
+	transition: background-size 1.5s ease-out;
+  background-repeat: no-repeat;
+  
+  }
+  
+  .link:hover{
+    background-size:100%;
+  }
+

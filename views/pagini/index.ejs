@@ -1,307 +1,272 @@
 <!DOCTYPE html>
-<html  lang="ro">
-    <head>
-        
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
-        <title>Cofetăria Dulcelind</title>
-        <%- include("../fragmente/head.ejs")  %>
-    </head>
-    <body>
-    <%- include("../fragmente/header.ejs")  %>
-    <main>
-        <div id="grid-pagina">
-            <section id="welcome">
-                <h2>Bine ati venit</h2>
-                <p>
-                    Ip:  <%- locals.ip  %>
-                </p>
-                <p>Suma: <%- locals.a+locals.b  %></p>
-                <p class="intro">Vă mulțumim că ne vizitați site-ul. Luați de aici niște biscuiți virtuali. Poftă bună!</p>
+<html lang="ro">
+<head>
+    <title>DIEDA - homepage</title>
+    <meta name="keywords" content="librarie online, dieda, carti ieftine, totebag, board games, figurine, oferte, promotii, reduceri, merch, albume"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
+    <meta name="description" content="Site-ul online al librăriei Dieda. Comandă-ți cărțile și albumele preferate cu livrare gratuită la comenzi peste 75 de lei."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
+    <%-include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%-include("../fragmente/header.ejs") %>
+<main>
+    <div id="grid-pagina">
+    <section id="welcome" class="grid-item">
+        <h2> <picture>
+            <!-- il ia pe primul care se potriveste cu query-ul din media-->
+            <source srcset="/resurse/imagini/logo3.png" media="(max-width:700px)">
+            <source srcset="/resurse/imagini/logo2.png" media="(max-width:1000px)">
+            <img id="logo" src="/resurse/imagini/logo1.jpeg" alt="LOGO">
+        </picture>
+        Bine ati venit! <i id="inima" class="fa-solid fa-heart fa-beat"></i></h2>
+        <p>Librăriile DIEDA sunt cele mai extinse librării din țară, oferind prețuri avantajoase la cele mai noi și discutate titluri de carte, jocuri de pierdut vremea cu prietenii și tot felul de merchandise. Pe site-ul nostru puteți găsi atât reducerile din librării, cât și promoții și oferte exclusive online. Vă așteptăm cu drag la cafeluță cu o carte! <i class="fa-solid fa-heart"></i> </p>
+        <video id="video-vtt" controls poster="resurse/imagini/poster.jpeg"  preload="auto">
+            <source src="/resurse/video/bookstore.mp4" type="video/mp4">
+            <source src="/resurse/video/bookstore.ogv" type="video/ogv">
+            <track default src="/resurse/video/captions/sub_ro.vtt" kind="captions" srclang="ro" label="romana"/>
+            <track src="/resurse/video/captions/sub_eng.vtt" kind="captions" srclang="en" label="engleza"/>
+        </video>
+    </section>
+    <section id="produse" class="grid-item">
+        <h2>Produsele noastre</h2>
+        <p>Librăria noastră vă oferă o gamă variată de produse, ca orice altă librărie online, doar că noi avem prețuri mai mici. Puteți găsi la noi cărți ieftine până în 50 de lei <s>fiindcă nu avem adaos comercial de 300%</s>, căni <i lang="en">affordable</i> cu Hello Kitty și perne cu Minecraft. Avem și caiete cu Pucca. <a class="link" href="https://s13emagst.akamaized.net/products/42675/42674016/images/res_006cdb77adaaeb21d5be63fcf927230a.jpg" target="_blank">Exemplu de caiet cu Pucca</a></p>
+        <section id="carti">
+            <h3>Cărțile noastre</h3>
+            <h3 id="efect-css-reflexie-text">Cartile noastre</h3>
+            <p>Veți găsi pe site-ul nostru o <strong>varietate</strong> de genuri de cărți și o <strong>varietate</strong> de reduceri:</p>
+            <ol>
+                <li>Ficțiune
+          
+                <ul>
+                    <li>Romance</li>
+                    <li>Fantasy</li>
+                    <li>Polițiste</li>
+                    <li>Clasice</li>
+                    <li>Young Adult</li>
+                    <li>Sci-Fi</li>
+                    <li>Aventură</li>
+                </ul></li>
+                <li>Cărți în alte limbi</li>
+                <li>Istorie</li>
+                <li>Enciclopedii</li>
+                <li>Dezvoltare personală</li>
+                <li>Benzi desenate</li>
+                <li>Manga</li>
+            </ol>
+            <div id="efect-css-duotone"><img src="/resurse/imagini/imagine-duotone.jpg" alt="biblioteca"></div>
+            <p><strong>Stocurile noastre sunt într-o continuă creștere! Dacă dorești să apară pe site-ul nostru o anumită carte pe care s-o vezi și în promoții, nu ezita să ne contactezi prin mail!</strong></p>
+        </section>
+        <section id="albume">
+            <h3>Albumele noastre</h3>
+            <h3 id="efect-css-reflexie-text">Albumele noastre</h3>
+            <p>Vindem și albume pe <abbr title="discuri compacte">CD</abbr>, și albume pe vinyl!</p>
+        </section>
+        <section id="boardgames">
+        <h3>Jocuri de societate</h3>
+        <h3 id="efect-css-reflexie-text">Jocuri de societate</h3>
+        <p>Board games pe placul vostru! Avem în special toate tipurile de UNO și de remi; n-o să găsiți, însă, Catan pe site-ul nostru.</p>
+        </section>
+        <section id="merch">
+            <h3>Merchandise</h3>
+            <h3 id="efect-css-reflexie-text">Merchandise</h3>
+            <p>În cazul în care sunteți fani înfocați a orice există la noi pe stoc, zona de merchandise de pe site-ul nostru vă pune la dispoziție produse cu licență <i lang="en">overpriced</i> ca să vă simțiți adevărați fani! Avem figurine, poate un totebag, și le puteți găsi chiar și în ofertele noastre!</p>
+        </section>
+        <section id="scolar">
+            <h3>Școlărești</h3>
+            <h3 id="efect-css-reflexie-text">Scolaresti</h3>
+            <p>Puteți să găsiți pe site-ul nostru și rechizite școlare, dar, <strong>foarte important</strong>, avem pixulețe din astea:</p>
+            <figure>
+                <img src="/resurse/imagini/pixuri.jpg" alt="pixuri cu sclipici">
+                <figcaption>PIXURI CU SCLIPICI</figcaption>
+            </figure>
+        </section>
+    </section>
+            <section id="reduceri" class="grid-item">
+                <h3>REDUCERI DE 25-75%</h3>
+                <p>Librăria noastră vă pune la dispoziție o gamă largă de produse, după cum ați observat, însă vă prezentăm și o gamă variată de produse <b>reduse</b>.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dui augue, volutpat nec lacus vulputate, varius tempor diam. Quisque euismod vestibulum arcu, nec faucibus erat congue vitae. Sed mattis leo nec arcu elementum varius. Aenean sed molestie sem, rutrum aliquam elit. Nam non pretium magna, in tincidunt elit. Curabitur vitae eleifend ligula. Aliquam in mattis lectus. Etiam vehicula hendrerit ante in condimentum. Ut facilisis sodales vulputate. Donec bibendum, neque sit amet volutpat elementum, dui ipsum finibus felis, quis dignissim mi nunc id tellus. Quisque ut dapibus ante. Sed sed diam vel nunc volutpat porta.</p>
+                <p>Nullam vestibulum ligula id dignissim venenatis. Integer sit amet est et urna posuere bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed neque eget felis pellentesque pretium tincidunt vel tortor. Praesent iaculis gravida lorem et posuere. Ut a rutrum nunc. Donec lacinia dapibus metus nec eleifend. Aliquam egestas elit accumsan velit condimentum vulputate. Maecenas condimentum mi a faucibus venenatis. Etiam id mi sed elit convallis finibus. Phasellus velit mauris, bibendum ut imperdiet non, pretium in lorem. Vestibulum tincidunt tortor sit amet sem accumsan viverra. Cras ac neque rutrum massa efficitur iaculis.
+
+                    Nam vulputate erat ante, nec eleifend urna rhoncus ut. Nam mollis ullamcorper sem, et mollis quam venenatis ac. Aenean fermentum ligula urna, eu feugiat augue hendrerit vel. Suspendisse potenti. Nullam mi ipsum, faucibus at lorem ac, lobortis commodo neque. Donec id urna vel leo imperdiet convallis. Quisque at mauris libero. Sed vitae leo porttitor, luctus ligula sit amet, feugiat sem. Mauris eu lorem risus.</p>
+                <p>Praesent posuere mattis ipsum sed hendrerit. Vivamus eu odio nec elit cursus feugiat. Vivamus convallis scelerisque risus, eu maximus neque. Suspendisse potenti. Maecenas auctor, leo ac tristique consequat, sapien felis tincidunt urna, vel vulputate tellus erat nec mi. Maecenas nec tempus ligula. Quisque luctus tellus nec mattis dapibus. Nam luctus non lectus vitae dictum. Praesent molestie porttitor mauris ac ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mollis ac ante a luctus. Sed dignissim facilisis pretium. Aenean ac tincidunt orci, sed hendrerit enim.
+
+                    Cras quis vulputate odio, ac varius diam. Ut lobortis leo in ligula sollicitudin, sed gravida est dictum. Pellentesque sit amet neque quis nisi consequat dapibus. Vestibulum in sagittis eros. Quisque in dui orci. Suspendisse ullamcorper leo quis aliquam mattis. Donec a consequat diam. Morbi hendrerit sem molestie nisi malesuada tincidunt.</p>    
+                <p>Aliquam at odio eget orci malesuada eleifend eu non ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sit amet sodales libero. Nunc sit amet diam sed felis semper sollicitudin. Suspendisse ligula felis, facilisis ac fringilla ac, facilisis hendrerit odio. Sed mollis sodales aliquet. Duis et mi efficitur, blandit nisl ac, bibendum metus. Quisque porta mi quis vulputate viverra. Donec sit amet dictum lacus, id mollis arcu. Nullam sed lorem nulla. Aliquam nec odio orci.</p>
+                <p>Fusce eget faucibus urna. Quisque luctus est a tempus lacinia. Sed ut tortor elit. Sed ac vehicula augue, ac cursus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse aliquet ante in dapibus fringilla. Mauris lobortis scelerisque eleifend. Ut nec lacus mattis, elementum nisi at, sodales nisl. Fusce fringilla ex dolor, sed condimentum risus eleifend nec. Proin scelerisque at augue id rutrum. Suspendisse ac nunc porttitor, fringilla dui eu, volutpat velit. Suspendisse eget odio nunc.</p>
+            
+            </section>
+            <section id="oferte" class="grid-item">
+                <h3>Oferta săptămânii</h3>
+                <p>Doar săptămâna aceasta avem ofertă de 1+1: la orice carte cumpărată din seria ”Percy Jackson” primiți gratuit o cană cu pisicuțe!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dui augue, volutpat nec lacus vulputate, varius tempor diam. Quisque euismod vestibulum arcu, nec faucibus erat congue vitae. Sed mattis leo nec arcu elementum varius. Aenean sed molestie sem, rutrum aliquam elit. Nam non pretium magna, in tincidunt elit. Curabitur vitae eleifend ligula. Aliquam in mattis lectus. Etiam vehicula hendrerit ante in condimentum. Ut facilisis sodales vulputate. Donec bibendum, neque sit amet volutpat elementum, dui ipsum finibus felis, quis dignissim mi nunc id tellus. Quisque ut dapibus ante. Sed sed diam vel nunc volutpat porta.</p>
+                <p>Nullam vestibulum ligula id dignissim venenatis. Integer sit amet est et urna posuere bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed neque eget felis pellentesque pretium tincidunt vel tortor. Praesent iaculis gravida lorem et posuere. Ut a rutrum nunc. Donec lacinia dapibus metus nec eleifend. Aliquam egestas elit accumsan velit condimentum vulputate. Maecenas condimentum mi a faucibus venenatis. Etiam id mi sed elit convallis finibus. Phasellus velit mauris, bibendum ut imperdiet non, pretium in lorem. Vestibulum tincidunt tortor sit amet sem accumsan viverra. Cras ac neque rutrum massa efficitur iaculis.
+
+                    Nam vulputate erat ante, nec eleifend urna rhoncus ut. Nam mollis ullamcorper sem, et mollis quam venenatis ac. Aenean fermentum ligula urna, eu feugiat augue hendrerit vel. Suspendisse potenti. Nullam mi ipsum, faucibus at lorem ac, lobortis commodo neque. Donec id urna vel leo imperdiet convallis. Quisque at mauris libero. Sed vitae leo porttitor, luctus ligula sit amet, feugiat sem. Mauris eu lorem risus.</p>
+                <p>Praesent posuere mattis ipsum sed hendrerit. Vivamus eu odio nec elit cursus feugiat. Vivamus convallis scelerisque risus, eu maximus neque. Suspendisse potenti. Maecenas auctor, leo ac tristique consequat, sapien felis tincidunt urna, vel vulputate tellus erat nec mi. Maecenas nec tempus ligula. Quisque luctus tellus nec mattis dapibus. Nam luctus non lectus vitae dictum. Praesent molestie porttitor mauris ac ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam mollis ac ante a luctus. Sed dignissim facilisis pretium. Aenean ac tincidunt orci, sed hendrerit enim.
+
+                    Cras quis vulputate odio, ac varius diam. Ut lobortis leo in ligula sollicitudin, sed gravida est dictum. Pellentesque sit amet neque quis nisi consequat dapibus. Vestibulum in sagittis eros. Quisque in dui orci. Suspendisse ullamcorper leo quis aliquam mattis. Donec a consequat diam. Morbi hendrerit sem molestie nisi malesuada tincidunt.</p>    
+                <p>Aliquam at odio eget orci malesuada eleifend eu non ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sit amet sodales libero. Nunc sit amet diam sed felis semper sollicitudin. Suspendisse ligula felis, facilisis ac fringilla ac, facilisis hendrerit odio. Sed mollis sodales aliquet. Duis et mi efficitur, blandit nisl ac, bibendum metus. Quisque porta mi quis vulputate viverra. Donec sit amet dictum lacus, id mollis arcu. Nullam sed lorem nulla. Aliquam nec odio orci.</p>
+                <p>Fusce eget faucibus urna. Quisque luctus est a tempus lacinia. Sed ut tortor elit. Sed ac vehicula augue, ac cursus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse aliquet ante in dapibus fringilla. Mauris lobortis scelerisque eleifend. Ut nec lacus mattis, elementum nisi at, sodales nisl. Fusce fringilla ex dolor, sed condimentum risus eleifend nec. Proin scelerisque at augue id rutrum. Suspendisse ac nunc porttitor, fringilla dui eu, volutpat velit. Suspendisse eget odio nunc.</p>
+            </section>
+            <section id="aparitii" class="grid-item">
+                <h3>Apariții noi</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies, nunc et vehicula fringilla, odio ante feugiat enim, imperdiet viverra erat arcu eget risus. Nam ultricies tristique interdum. Pellentesque euismod gravida turpis viverra tempor. Morbi gravida, felis vitae rutrum bibendum, lectus nisl egestas nisi, id consectetur orci dui nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eleifend ex non feugiat posuere. Morbi sit amet commodo leo. Ut vehicula, odio quis fermentum pellentesque, nisl mi porta ipsum, a egestas nunc eros at est. Duis tempor mi in sapien eleifend scelerisque. Cras varius libero eu nunc bibendum, placerat dignissim ante sagittis. Curabitur eu leo enim.
+
+                    In id iaculis ex. In fermentum eros quis odio scelerisque, in pellentesque arcu accumsan. Curabitur est est, rhoncus vitae faucibus nec, pharetra eget tellus. Aenean non volutpat justo. Praesent non tortor non mi sollicitudin pretium. Duis tempus leo et blandit ultricies. Vivamus vitae odio vel sapien pretium rhoncus. Morbi vel congue mauris, ut porta quam. Vestibulum rutrum tristique quam, ac auctor dui ultricies ut. Donec elit dui, dictum porttitor augue ac, condimentum venenatis urna.</p>
                 
-                <div class="intro-oferte"><div>Pateuri</div><div>Bomboane</div><div>Fursecuri</div><div>Prajituri</div><div>Torturi</div></div>
-                <p class="anunt intro">Vă puteți îngrășa atât la sediul nostru cât și la propriul dumneavoastră domiciliu, cu ajutorul ofertei noastre de livrare a produselor prin curier.</p>
-                <div id="dv-prezentare-1">
-                    <div id="dv-prezentare">
-                    <picture>
-                        <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                        <source srcset="./resurse/imagini/macarons-200x200.jpg" media="(max-width:700px)"/>
-                        <source srcset="./resurse/imagini/macarons.jpg" media="(max-width:1200px)"/>
-                        <img src="./resurse/imagini/macarons-640x360.jpg" alt="text"/>
-                    </picture>
-                </div>
-            </div>
-            <hr class="prajituri"/>
-            <div id="container-video">
-                <img class="farfurie" src="resurse/imagini/farfurie-flori-albastre.png" alt="farfurie">
-                <div id="centrare-video">
-                    <div id="clip-video">
-                        <div id="stil-video">
-                            <video width="320" height="240"  playsinline autoplay loop muted>
-                                <source src="resurse/video/Chocolate.mp4" type="video/mp4">
-                                <source src="resurse/video/Chocolate.ogv" type="video/ogv">
-                                <track default src="data:image/png;base64, V0VCVlRUIC0gQ2lvY29sYXTEgwoKMDA6MDAuMDAwIC0tPiAwMDowMy4wMDAgbGluZTowCkNpb2NvbGF0xIMhISEKCjAwOjAzLjAwMCAtLT4gMDA6MDcuMDAwIGxpbmU6MApNdWx0xIMgY2lvY29sYXTEgyEhISEKCjAwOjA5LjAwMCAtLT4gMDA6MTQuMDAwIGxpbmU6MApVcHMsIGFtIG11cmTEg3JpdCBtYXNhIQoKMDA6MTQuNTAwIC0tPiAwMDoxOS4wMDAgbGluZTowCk51IGNvbnRlYXrEgyEgQ2lvY29sYXTEg8SDxIPEg8SDxIMhCgo=" kind="captions" srclang="ro" label="romana">
-                                <track src="data:image/png;base64, V0VCVlRUIC0gQ2hvY29sYXRlDQoNCjAwOjAwLjAwMCAtLT4gMDA6MDMuMDAwDQpDaG9jb2xhdGUhISENCg0KMDA6MDMuMDAwIC0tPiAwMDowNy4wMDANCkxvdHMgb2YgY2hvY29sYXRlISEhIQ0KDQowMDowOS4wMDAgLS0+IDAwOjE0LjAwMA0KT3VwcywgdGFibGUgZ290IGRpcnR5IQ0KDQowMDoxNC41MDAgLS0+IDAwOjE5LjAwMA0KRG9lc24ndCBtYXR0ZXIhIENob2NvbGF0ZSEhIQ0KDQo=" kind="captions" srclang="en" label="engleza">
-                            </video>
-                        </div>
+        </section>
+                    <div>
+                    <h4>Topul celor mai vândute cărți de luna aceasta</h4>
+                    <div id="container" class="grid-item">
+                        
+                    <table id="stilizare-tabel">
+                        <thead>
+    
+                            <tr>
+                                <th>Top</th>
+                                <th>Carte</th>
+                                <th>Autor</th>
+                                <th>Gen</th>
+                                <th>Număr pagini</th>
+                                <th>Preț</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">TOP 3</td>
+                                <td>Sticletele</td>
+                                <td>Donna Tartt</td>
+                                <td>Thriller, coming of age</td>
+                                <td>864 de pagini</td>
+                                <td>34,99 lei</td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="caz-special1">Enigma Otiliei</td>
+                                <td class="caz-special2">George Călinescu</td>
+                                <td class="caz-special1">Realism literar</td>
+                                <td class="caz-special2">348 de pagini</td>
+                                <td class="caz-special1">19,99 lei</td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="caz-special1">Solitaire</td>
+                                <td class="caz-special2">Alice Oseman</td>
+                                <td class="caz-special1">Young Adult</td>
+                                <td class="caz-special2">392 de pagini</td>
+                                <td class="caz-special1">39,99 lei</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Demonii</td>
+                                
+                                <td>Feodor Dostoievski</td>
+                                <td>Ficțiune filosofică</td>
+                                <td>807 de pagini</td>
+                                <td>35,99 lei</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Universul în culori</td>
+                                
+                                <td>Lydia Alexai</td>
+                                <td>Carte de colorat</td>
+                                <td>70 de pagini</td>
+                                <td>42,99 lei</td>
+                            </tr>
+                         
+                            
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                            <td colspan="6">Stay tuned pentru topul de luna viitoare!</td>
+                            </tr>
+                        </tfoot>
+                    </table> 
+                    <caption>Acesta este un tabel.</caption>
                     </div>
-                </div>
-            </div>
-            </section>
-            <section id="promotii">
-                <h2>Promoții</h2>
-                <article>
-                    <h3 class="titlu">Super ofertă de weekend</h3>
-                    <p><b>Cofetăria Dulcelind</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate produsele cumpărate în intervalul 10-14.</p>
-                    <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediile <abbr title="Cofetăria Dulcelind">CD</abbr>.</p>
-                    <p>în cazul în care cumpărați mai mult de zece prăjituri primiți si un card de fidelitate pentru Salvare!</p>
-                </article>
-                <article>
-                    <h3>Ofertă pachet</h3>
-                    <p>Cofetăria Dulcelind oferă pachete cuprinzând:</p>
-                    <ol>
-                        <li><i lang="en">icecream</i></li>
-                        <li>Un set de 4 pateuri de sortimente diferite</li>
-                        <li>O prajitură la alegere</li>
-                        <li>Un <i>suc</i></li>
-                        <li>Gratis: o farfurioară ornata cu inițiala cofetăriei</li>
-                        <li>Gratis: o felicitare cu imaginea cofetăriei</li>
-                        <li>Gratis: un pui de pisică (am găsit niște pui de pisică abandonați lângă cofetărie și noi nu îi putem păstra. Nu ne reclamați la ANPC, <!--abreviere--> mulțumim de înțelegere!).  </li>
-                    </ol>
-                    
-                </article>
-                <article>
-                    <h3 class="titlu bcd">Promotie 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo, arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc vulputate risus ex.</p>
-                    <ol>
-                        <li>Suspendisse tempus imperdiet elit in.</li>
-                        <li>Quisque feugiat, mi eget condimentum</li>
-                        <li>Nunc vitae semper lacus, sed hendrerit purus </li>
-                        <li>Aenean imperdiet lorem vitae velit porta</li>
-                    </ol>
-                    
-                </article>
-                <article>
-                    <h3>Promotie 4</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed suscipit mauris. Proin commodo, arcu in mollis ullamcorper, tortor elit pulvinar dui, at vehicula mauris felis laoreet mauris. Nunc vulputate risus ex.</p>
-                    <ol>
-                        <li>Suspendisse tempus imperdiet elit in.</li>
-                        <li>Quisque feugiat, mi eget condimentum</li>
-                        <li>Nunc vitae semper lacus, sed hendrerit purus </li>
-                        <li>Aenean imperdiet lorem vitae velit porta</li>
-                    </ol>
-                    
-                </article>
-            </section>
-            <section id="produse">
-                <h2>Produsele noastre</h2>
-                <p>Vă oferim o multitudine de metode să câștigați cu succes kilograme în plus.</p>
-                <section>
-                    <h3>Torturi</h3>
-                    <p>În caz că nu le puteți mânca fiindcă sunteți la dietă și doar vă uitați la ele, puneți accentul pe u!</p>
-                    <p>Avem torturi cu:</p>
-                    <ul>
-                        <li>ciocolată</li>
-                        <li>frișcă</li>
-                        <li>fructe</li>
-                        <li>dulceață</li>
-                        <li>înghețată</li>
-                        <li>regrete</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Prăjituri</h3>
-                    <p>Oferim prăjiturile clasice plus câteva creations personnelles, oui!</p>
-                    <p>Prăjituri:</p>
-                    <ul>
-                        <li>savarină</li>
-                        <li>amandină</li>
-                        <li>tartă cu fructe</li>
-                        <li>doboș</li>
-                        <li>carpați (orientali, meridionali și occidentali)</li>
-                        <li>ecler</li>
-                        <li>tiramisu</li>
-                        <li>colivă</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h3>Pateuri</h3>
-                    <p>Pateurile noastre sunt umplute cu:</p>
-                    <ul>
-                        <li>brânză</li>
-                        <li>pizza</li>
-                        <li>spanac</li>
-                        <li>ciuperci</li>
-                        <li>compoziție secretă (sincer, nici noi nu mai știm ce conține)</li>
-                    </ul>
-                </section>
-            </section>
-            <section id="orar">
-                <h2>Orar</h2>
-                <table id="tab-orar">
-                    <thead>
+                 </div>
+    <section id="cos" class="grid-item">
+        <h2>Cosul de cumparaturi</h2>
+        <p>N-avem încă.</p>
+    </section>
+    <section id="FAQ" class="grid-item">
+        <h2>Întrebari frecvente</h2>
+        <details><summary>Cât costă livrarea?</summary>
+            <p>Dacă comandați produse care fac suma totală de 75 de lei, livrarea va fi gratuită! Dacă nu depășiți această sumă, livrarea standard costă 15 lei, iar cea rapidă 25 lei.</p>
+        </details>
+        <details><summary>Dacă primesc un produs deteriorat?</summary>
+            <p>Nu știu, vina curierului.</p>
+        </details>
+        <details><summary>Aveți newsletter?</summary>
+            <p>Încă nu.</p>
+        </details>
+        <details><summary>Deschide pentru o surpriză!</summary>
+            <figure>
+                <img src="/resurse/imagini/surpriza.png" alt="SURPRIZA!!!!">
+            </figure>
+        </details><br>
+    </section>
+        
+    </div>
+    <section id="dateon">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum fugiat voluptatum eveniet reiciendis non ab modi eos quasi ducimus sint. Dolorum et quos unde explicabo sequi rem maxime ducimus eius.</p>
+    </section>
+    <section id="dateuser">
+        <p>
+            Ip: <%- locals.ip %>
+        </p>
+    </section>
+    <section id="cont">
+        <h2>Cont de utilizator</h2>
+        <p>Contul de utilizator facilitează navigarea pe site-ul nostru și vă puteți aduna și utiliza punctele de fidelitate!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies, nunc et vehicula fringilla, odio ante feugiat enim, imperdiet viverra erat arcu eget risus. Nam ultricies tristique interdum. Pellentesque euismod gravida turpis viverra tempor. Morbi gravida, felis vitae rutrum bibendum, lectus nisl egestas nisi, id consectetur orci dui nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eleifend ex non feugiat posuere. Morbi sit amet commodo leo. Ut vehicula, odio quis fermentum pellentesque, nisl mi porta ipsum, a egestas nunc eros at est. Duis tempor mi in sapien eleifend scelerisque. Cras varius libero eu nunc bibendum, placerat dignissim ante sagittis. Curabitur eu leo enim.
 
-                        <tr>
-                            <th>Cod</th>
-                            <th>Perioadă</th>
-                            <th>Zi</th>
-                            <th>Interval dimineata</th>
-                            <th>Pauza de masa</th>
-                            <th>Interval seară</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td rowspan="5">Zile<br/>Lucrătoare</td>
-                            <td>Luni</td>
-                            <td>10-12</td>
-                            <td>12-14</td>
-                            <td>14-20</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Marti</td>
-                            <td>9-12</td>
-                            <td>12-14</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Miercuri</td>
-                            <td>9-11</td>
-                            <td>11-13</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Joi</td>
-                            <td>9-11</td>
-                            <td>11-13</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            
-                            <td>Vineri</td>
-                            <td>9-12</td>
-                            <td>12-14</td>
-                            <td>14-19</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td rowspan="2">Weekend</td>
-                            <td>Sambata</td>
-                            <td>10-12</td>
-                            <td>12-13</td>
-                            <td>13-16</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Duminica</td>
-                            <td>10-14</td>
-                            <td>-</td>
-                            <td>inchis</td>
-                        </tr>
-                    </tbody>
-                </table> 
-            </section>
-            <figure id="fig1" class="fg-img">
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose 1</figcaption>
-            </figure>
-            <figure id="fig2" class="fg-img">
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose 2</figcaption>
-            </figure>
-            <figure  id="fig3" class="fg-img">
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose 3</figcaption>
-            </figure>
-            <section id="anunturi">
-                <h2>Anunțuri</h2> <p><time datetime="2022-01-05">5 ianuarie 2022</time> <strong>No more Covid!!!!</strong></p>
-               
-                <p><time datetime="2020-07-05">5 iulie 2020</time> Am adăugat o prăjitură noua în meniu</p>
-                <p><time datetime="2020-09-15">15 septembrie 2020</time> Am adăugat un fursec nou în meniu</p>
-                <p><time datetime="2020-12-20">20 decembrie 2020</time> Nu avem nimic de anunțat, dar ne era dor de voi.</p>
-                <p><time datetime="2020-12-28">28 decembrie 2020</time> Am adăugat o prăjitură noua în meniu</p>
-                <p><time datetime="2021-01-01">1 ianuarie 2021</time> Un an nou fericit!</p>
-                <p><time datetime="2021-02-11">11 februarie 2021</time> Studiile au arătat că prăjiturile sunt cele mai sănătoase alimente. 
-                    E adevărat că doar studiile noastre, dar astea sunt detalii. </p>
-            </section>
-            <section id="index-intrebari">
-                <h2>Întrebări frecvente</h2>
-                <details><summary>Produsele dumneavoastră provoacă afecțiuni dentare?</summary>
-                    <p>Da!</p>
-                </details>
-                <details><summary>Produsele dumneavoastră provoacă afecțiuni ale sistemului digestiv (precum diabetul)?</summary>
-                    <p>Da!</p>
-                </details>
-                <details><summary>Produsele dumneavoastră provoacă obezitate?</summary>
-                    <p>Foarte! Da!</p>
-                </details>
-                <details><summary>Sunteți cumva asociați cu medicii dentiști, medicii gastroenterologi, companiile farmaceutice și sălile de Fitness?</summary>
-                    <p>Ne rezervăm dreptul de a nu răspunde la această întrebare; mulțumim pentru înțelegere!</p>
-                </details>
-            </section>
+            In id iaculis ex. In fermentum eros quis odio scelerisque, in pellentesque arcu accumsan. Curabitur est est, rhoncus vitae faucibus nec, pharetra eget tellus. Aenean non volutpat justo. Praesent non tortor non mi sollicitudin pretium. Duis tempus leo et blandit ultricies. Vivamus vitae odio vel sapien pretium rhoncus. Morbi vel congue mauris, ut porta quam. Vestibulum rutrum tristique quam, ac auctor dui ultricies ut. Donec elit dui, dictum porttitor augue ac, condimentum venenatis urna.</p>
+    </section>
 
+    <section id="galerie-statica">
+        <h2>Galerie</h2>
+        <div id="grid-galerie">
+        <%
+        for (let imag of locals.imagini) { 
+           d=new Date();
+           var v_timp=["dimineata", "zi", "noapte"];
+           var currentHour = d.getHours();
+           var currentTimePeriod;
+
+if (currentHour >= 5 && currentHour < 12) {
+    currentTimePeriod = "dimineata";
+} else if (currentHour >= 12 && currentHour < 20) {
+    currentTimePeriod = "zi";
+} else {
+    currentTimePeriod = "noapte";
+}
+
+if (imag.timp && imag.timp.includes(currentTimePeriod)){
+           %>
+                <figure>
+                    <picture>
+                        <source srcset="<%- imag.cale_relativa_mediu %>" media="(max-width:1000px)" />
+                                <img id="imagine-galerie" src="<%- imag.cale_relativa %>" alt="imagine">
+                    </picture>
+                    <figcaption><%- imag.nume %></figcaption>
+                </figure>
+    <%} %>
+    
+        <% }  %>
+    </div>
+</section>
+    
+    <div class="container-iframe">
+        <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/qVDfV7gCCFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <section id="galerie-statica">
-            <h2>Galerie</h2>
-            <div id="grid-galerie">
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-                <figure>
-                <img src="resurse/imagini/briose-frisca.png" alt="briose">
-                <figcaption>Briose</figcaption>
-                </figure>
-            
-            </div>
-        </section>
-        <section id="retete">
-            <h2>Retete</h2>
-            <p>Dacă doriți să vă faceți singuri prăjiturile (dar de ce ati face asta când ne aveți pe noi???) 
-                vă recomandăm următoarele rețete simple pe care sperăm să le încercați, să vedeți cât e de <s>ușor</s> să le faceți, 
-                să vă dați în final bătuți și să veniți să cumpărați de la noi &#128512;. Mulțumim! &#128513;</p>
-            <div class="taburi-iframe">
-            <a href="https://www.youtube.com/embed/qtlhdIfojmc" target="ifr-video">Reteta tort vanilie</a>
-            <a href="https://www.youtube.com/embed/dsJtgmAhFF4" target="ifr-video" >Reteta tort ciocolata</a>
-            <a href="https://www.youtube.com/embed/Wtxbt-CpA2s" target="ifr-video" >Reteta tort căpșuni</a><br/>
-            </div>
-
-            
-            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/qtlhdIfojmc" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
+        <div class="taburi-iframe">
+            <a href="https://www.youtube.com/embed/qVDfV7gCCFE" target="ifr-video">THE ONE - book trailer</a>
+            <a href="https://www.youtube.com/embed/leApDgyg9xE" target="ifr-video" >THE CROWN - book trailer</a>
+            <a href="https://www.youtube.com/embed/07i6PO1gP10" target="ifr-video" >THE SIREN - book trailer</a><br>
+        </div>
+      <p id="watermark"></p>
     </main>
-
-    <%- include("../fragmente/footer.ejs")  %>
-
+    <%-include("../fragmente/footer.ejs") %>
     </body>
 </html>

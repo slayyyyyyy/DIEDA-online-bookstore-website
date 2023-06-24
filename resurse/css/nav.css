@@ -86,7 +86,6 @@ ul.meniu li div, ul.meniu li a{
 }
 
 .submenu {
-    position: bottom;
     top: 100%;
     left: 0;
     background-color: var(--culoare-fundal-inchis);

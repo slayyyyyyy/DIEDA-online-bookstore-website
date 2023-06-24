@@ -27,6 +27,7 @@ ul.meniu{
     display: none;
 }
 
+
 #checkbox-meniu:checked+ul.meniu{
     display: block;
     animation-name: animatie_meniu;

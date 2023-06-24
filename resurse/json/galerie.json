@@ -1,39 +1,66 @@
 {
 	"cale_galerie":"resurse/imagini/galerie",
-	"imagini": [
-		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie"]
-		},
-		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie"]
-			
-		},
-		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","noiembrie","iunie","martie"]
-		},
-		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
-			"luni":["noiembrie"]
-		},
-		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
-		},
-		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
-		},
-		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
-		}
-	]
+    "imagini": [
+    {
+        "cale_relativa":"biblioteca.jpg",
+        "nume":"Biblioteca noastră",
+        "descriere":"Biblioteca",
+        "timp":["dimineata", "zi","noapte"]
+    },
+    {
+        "cale_relativa":"pixuri-sclipici.jpg",
+        "nume":"Pixuri cu sclipici",
+        "descriere":"Pixuri cu sclipici",
+        "timp":["zi"]
+        
+    },
+    {
+        "cale_relativa":"fantasy-books.jpeg",
+        "nume":"Cărți fantasy populare",
+        "descriere":"Fantasy",
+        "timp":["noapte"]
+    },
+    {
+        "cale_relativa":"YA.jpg",
+        "nume":"Cărți Young Adult",
+        "descriere":"YA",
+        "timp":["zi","noapte"]
+    },
+    {
+        "cale_relativa":"romance-books.jpg",
+        "nume":"Cărți romance",
+        "descriere":"Romance",
+        "timp":["dimineata","zi"]
+    },
+    {
+        "cale_relativa":"thriller-books.jpg",
+        "descriere":"Cărți thriller",
+        "nume":"Thriller",
+        "timp":["noapte"]
+    },
+    {
+        "cale_relativa":"sci-fi-books.jpg",
+        "nume":"Cărți SF",
+        "descriere":"Sci-fi",
+        "timp":["dimineata", "zi"]
+    },
+    {
+        "cale_relativa":"historical-books.jpg",
+        "nume":"Cărți istorice",
+        "descriere":"Istorice",
+        "timp":["noapte"]
+    },
+    {
+        "cale_relativa":"non-fiction-books.jpg",
+        "nume":"Cărți non-ficționale",
+        "descriere":"Non-ficțiune",
+        "timp":["dimineata"]
+    },
+    {
+        "cale_relativa":"merchandise.jpg",
+        "nume":"Merchandise",
+        "descriere":"Merch",
+        "timp":["dimineata","noapte"]
+    }
+]
 }

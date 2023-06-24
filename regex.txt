@@ -1,0 +1,6 @@
+abc1{3,}[a-z]* (* e oricate de la a la z)
+abc1111abc
+
+^([1-9][0-9]*|0)$ ($ termina) - expresie regulata pt un nr natural sau care incepe
+
+^(-?[1-9][0-9]*|0)$

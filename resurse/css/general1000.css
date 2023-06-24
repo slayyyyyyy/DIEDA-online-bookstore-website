@@ -30,8 +30,9 @@ html{
     font-size: 14px;
 }
 .taburi-iframe{
+    width:600px;
     justify-content: left;
-    margin-left:270px;
+    margin-left:120px;
 }
 
 .fa-solid{

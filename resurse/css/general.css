@@ -48,6 +48,9 @@ body{
     --culoare-fundal-inchis:#FFA929;
     --culoare-border: #e8aa1a96;
     --culoare-highlight: #FFD21C;
+    --c4:#f19c74;
+    --c5: #f68f8f;
+    --c6: #39280e;
     --spatiere-pagina:50px;
     --padding-sectiune:5px;
     --culoare-headings: #ff3e1c; 
@@ -65,12 +68,12 @@ body{
 }
 
 header{
-  background-color: #f19c74;
+  background-color: var(--c4);
 }
 
 footer{
   padding-left: var(--spatiere-pagina);
-  background-color: #f68f8f;
+  background-color: var(--c5);
   border: 3px solid rgb(195, 33, 33);
   border-radius: 1rem;
 }
@@ -182,12 +185,108 @@ table tbody tr>td.caz-special2{
   }
   
   /* stilul pentru containerul cu scrollbar */
-  .container {
+  #container {
     overflow-x: auto;
     /* max-width:50%; */
   }
 
 #inima {
   animation: fa-beat 2s infinite linear;
-
  }
+
+ video {
+  min-width: 90px;
+  max-height: 400px;
+  max-width: 270px;
+}
+
+::cue {
+  background-color: rgba(249, 43, 43, 0.3);
+  color: #ffffff;
+}
+
+::cue(b) {
+  font-weight: bold;
+}
+
+::cue(u) {
+  text-decoration: underline;
+}
+
+::cue(i) {
+  font-style:italic;
+}
+
+#logo{
+  max-width: 70px;
+}
+
+#efect-css-duotone {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background-size: cover;
+}
+
+#efect-css-duotone::before,
+#efect-css-duotone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#efect-css-duotone::before {
+  background-color:var(--c4);
+  mix-blend-mode: multiply;
+  transition: background-color 0.5s;
+}
+
+#efect-css-duotone::after {
+  background-color: var(--c1);
+  mix-blend-mode: screen;
+  transition: background-color 0.5s;
+}
+
+#efect-css-duotone:hover::before {
+  background-color: var(--c5);
+}
+
+#efect-css-duotone:hover::after {
+  background-color:var(--c6);
+}
+
+#efect-css-reflexie-text {
+  position: relative;
+  left:0;
+  top:0;
+	transform-origin:bottom;
+	/*conteaza ordinea transformarilor!*/
+	transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(42px, 90px); 
+	opacity:0.55;
+}
+
+
+
+#efect-css-reflexie-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    opacity: 0.5;
+    filter: blur(2px); /* Ușor blurată */
+    transition: all 0.3s ease;
+  }
+  
+  #efect-css-reflexie-text:hover::after {
+    transform: translateY(20%); /* Alungirea reflexiei */
+  }
+

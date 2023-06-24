@@ -1,0 +1,95 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with (
+   /*// Dimensiunea razei de border pentru toate elementele
+$border-radius: 0.25rem !default;
+
+// Dimensiunea razei de border pentru elementele de tip card
+$border-radius-lg: 0.3rem !default;
+
+// Dimensiunea razei de border pentru butoane
+$btn-border-radius: 0.25rem !default;
+
+// Dimensiunea razei de border pentru butoanele mari
+$btn-border-radius-lg: 0.3rem !default;
+
+// Dimensiunea razei de border pentru butoanele mici
+$btn-border-radius-sm: 0.2rem !default;
+
+
+// Dimensiunea fontului pentru h1
+$font-size-h1: 2.5rem !default;
+
+// Dimensiunea fontului pentru h2
+$font-size-h2: 2rem !default;
+
+// Dimensiunea fontului pentru h3
+$font-size-h3: 1.75rem !default;
+
+// Dimensiunea fontului pentru h4
+$font-size-h4: 1.5rem !default;
+
+// Dimensiunea fontului pentru h5
+$font-size-h5: 1.25rem !default;
+
+// Dimensiunea fontului pentru h6
+$font-size-h6: 1rem !default;
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Culorile de background pentru temele implicită și luminată
+$body-bg: #fff !default;
+$body-bg-light: #f8f9fa !default;
+
+// Culorile de background pentru temele întunecată și neagră
+$body-bg-dark: #343a40 !default;
+$body-bg-black: #000000 !default;
+
+*/
+
+/*$primary: #7fcd91,
+$secondary: #ffd8a6,
+$success: #9ac9c9,
+$info: #ccc0d3,
+$warning: #f3b562,
+$danger: #ff5959,
+//$light: #f8f8f8,
+$dark: #292929,
+
+
+//$body-bg: $light,
+//$body-bg-light: lighten($light, 10%),
+//$body-bg-dark: $dark,
+//$body-bg-black: darken($dark, 10%),*/
+
+//$border-radius-width: 5rem,
+$body-bg: yellow,
+$body-color:red,
+
+$font-family-sans-serif:sans-serif,
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1220px,
+  xxl: 1520px
+),
+
+$display-font-sizes: 12rem,
+
+$grid-breakpoints: (
+      xs: 0,
+      sm: 576px,
+      md: 992px,
+      lg: 1200px,
+      xl: 1400px
+    )
+    
+ 
+)

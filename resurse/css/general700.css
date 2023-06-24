@@ -29,8 +29,9 @@ html{
 }
 
 .taburi-iframe {
+    width: 500px;
     justify-content: left;
-    margin-left: 270px;
+    margin-left: 170px;
 } 
 .taburi-iframe a{
     max-height: 20px;
@@ -41,9 +42,9 @@ html{
     animation: none;
 }
 
-img, iframe, .container-iframe, .taburi-iframe, figcaption, video{
+/* img, iframe, .container-iframe, .taburi-iframe, figcaption, video{
     width: 0px;
-  }
+  } */
 
 #arrow{
     display:none;
