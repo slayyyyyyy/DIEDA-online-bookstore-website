@@ -4,6 +4,7 @@ const path=require('path');
 const sharp= require('sharp');
 const sass=require('sass');
 const ejs=require('ejs');
+const {Client}=require('pg');
 
 obGlobal={
     obErori:null,
@@ -28,6 +29,13 @@ for(let folder of vectorFoldere){
         fs.mkdirSync(caleFolder);
     }
 }
+
+var client= new Client({database:"produse",
+        user:"andreea",
+        password:"admin",
+        host:"localhost",
+        port:5432});
+client.connect();
 
 function compileazaScss(caleScss, caleCss){
     console.log("cale:",caleCss);
@@ -93,6 +101,50 @@ app.get(["/index","/","/home"], function(req, res){
 app.get("/despre" , function(req,res){ 
     res.render("pagini/despre");
 })
+
+// ----------------------------Produse--------------------------- //
+
+app.get("/produse",function(req, res){
+    console.log(req.query)
+
+    //TO DO query pentru a selecta toate produsele
+    //TO DO se adauaga filtrarea dupa tipul produsului
+    //TO DO se selecteaza si toate valorile din enum-ul categ_produse
+    client.query("select * from unnest(enum_range(null::categ_produse))",function(err, rezCategorie){
+        //console.log(err);
+        //console.log(rez);
+        let conditieWhere="";
+        if(req.query.tip)
+            conditieWhere=` where categorie='${req.query.tip}'`
+        client.query("select * from produse" +conditieWhere , function( err, rez){
+            console.log(300)
+            if(err){
+                console.log(err);
+                afisareEroare(res, 2);
+            }
+            else
+                res.render("pagini/produse", {produse:rez.rows, optiuni:rezCategorie.rows});
+        });
+    
+    })
+
+});
+
+
+app.get("/produs/:id",function(req, res){
+    console.log(req.params);
+   
+    client.query(`select * from produse where id=${req.params.id}`, function( err, rezultat){
+        if(err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else
+            res.render("pagini/produs", {prod:rezultat.rows[0]});
+    });
+});
+
+
 
 app.get("/*.ejs",function(req,res){
     afisareEroare(res,400);
@@ -182,5 +234,8 @@ function afisareEroare(res,_identificator,_titlu="titlu default",_text,_imagine)
        
 
 }
+
+
+
 app.listen(8080);
 console.log("Serverul a pornit");
