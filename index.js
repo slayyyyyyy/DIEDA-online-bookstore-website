@@ -6,14 +6,30 @@ const sass=require('sass');
 const ejs=require('ejs');
 const {Client}=require('pg');
 
+var client= new Client({database:"produse",
+        user:"andreea",
+        password:"admin",
+        host:"localhost",
+        port:5432});
+client.connect();
+
 obGlobal={
     obErori:null,
     obImagini:null,
     folderScss:path.join(__dirname,"resurse/scss"),
     folderCss:path.join(__dirname,"resurse/css"),
-    folderBackup: path.join(__dirname,"backup")
+    folderBackup: path.join(__dirname,"backup"),
+    optiuniMeniu: []
 }
 
+client.query("select * from unnest(enum_range(null::tipuri_produse))",function(err, rezTipuri){
+    if(err){
+        console.log(err)
+    }
+    else{
+        obGlobal.optiuniMeniu=rezTipuri.rows;
+    }
+})
 
 app= express();
 console.log("Folder proiect", __dirname);
@@ -29,20 +45,15 @@ for(let folder of vectorFoldere){
         fs.mkdirSync(caleFolder);
     }
 }
-
-var client= new Client({database:"produse",
-        user:"andreea",
-        password:"admin",
-        host:"localhost",
-        port:5432});
-client.connect();
+ 
+// ------------ FUNCTIA DE COMPILARE SCSS ------------//
 
 function compileazaScss(caleScss, caleCss){
     console.log("cale:",caleCss);
     if(!caleCss){
-        let vectorCale=caleScss.split("\\")
-        let numeFisExt=vectorCale[vectorCale.length-1];
-
+        //let vectorCale=caleScss.split("\\")
+        //let numeFisExt=vectorCale[vectorCale.length-1];
+        let numeFisExt=path.basename(caleScss);
         let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
         caleCss=numeFis+".css";
     }
@@ -54,16 +65,29 @@ function compileazaScss(caleScss, caleCss){
     
     
     // la acest punct avem cai absolute in caleScss si  caleCss
-    let vectorCale=caleCss.split("\\");
-    let numeFisCss=vectorCale[vectorCale.length-1];
+    //let vectorCale=caleCss.split("\\");
+    //let numeFisCss=vectorCale[vectorCale.length-1];
+    let caleResBackup=path.join(obGlobal.folderBackup, "resurse/css");
+    if(!fs.existsSync(caleResBackup))
+        fs.mkdirSync(caleResBackup, {recursive:true});
+
+    let numeFisCss=path.basename(caleCss);
     if (fs.existsSync(caleCss)){
-        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup,numeFisCss ))// +(new Date()).getTime()
+        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup,"resurse/css",numeFisCss ))// +(new Date()).getTime()
     }
     rez=sass.compile(caleScss, {"sourceMap":true});
     fs.writeFileSync(caleCss,rez.css)
     console.log("Compilare SCSS",rez);
 }
 //compileazaScss("a.scss");
+
+vFisiere=fs.readdirSync(obGlobal.folderScss);
+for( let numeFis of vFisiere ){
+    if (path.extname(numeFis)==".scss"){
+        compileazaScss(numeFis);
+    }
+}
+
 fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
     console.log(eveniment, numeFis);
     if (eveniment=="change" || eveniment=="rename"){
@@ -74,10 +98,17 @@ fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
     }
 })
 
+
+
 app.set("view engine","ejs");
 
 app.use("/resurse",express.static(__dirname+"/resurse"));
 app.use("/node_modules", express.static(__dirname+"/node_modules"));
+
+app.use("/*",function(req,res,next){
+    res.locals.optiuniMeniu=obGlobal.optiuniMeniu;
+    next();
+})
 
 app.use(/^\/resurse(\/[a-zA-Z0-9]*)*$/, function(req,res){
     afisareEroare(res,403);
@@ -102,7 +133,7 @@ app.get("/despre" , function(req,res){
     res.render("pagini/despre");
 })
 
-// ----------------------------Produse--------------------------- //
+// ----------------------------PRODUSE--------------------------- //
 
 app.get("/produse",function(req, res){
     console.log(req.query)
@@ -113,6 +144,10 @@ app.get("/produse",function(req, res){
     client.query("select * from unnest(enum_range(null::categ_produse))",function(err, rezCategorie){
         //console.log(err);
         //console.log(rez);
+        if (err){
+            console.log(err);
+        }
+        else{
         let conditieWhere="";
         if(req.query.tip)
             conditieWhere=` where categorie='${req.query.tip}'`
@@ -122,9 +157,12 @@ app.get("/produse",function(req, res){
                 console.log(err);
                 afisareEroare(res, 2);
             }
-            else
+            else{
+                console.log(rez);
                 res.render("pagini/produse", {produse:rez.rows, optiuni:rezCategorie.rows});
+            }
         });
+    }
     
     })
 
@@ -144,7 +182,7 @@ app.get("/produs/:id",function(req, res){
     });
 });
 
-
+//---------------- ERORI --------------//
 
 app.get("/*.ejs",function(req,res){
     afisareEroare(res,400);
@@ -187,6 +225,8 @@ function initErori()
 }
 initErori();
 
+// -------------- IMAGINI -----------//
+
 function initImagini(){
     var continut= fs.readFileSync(__dirname+"/resurse/json/galerie.json").toString("utf-8");
 
@@ -195,16 +235,22 @@ function initImagini(){
 
     let caleAbs=path.join(__dirname,obGlobal.obImagini.cale_galerie);
     let caleAbsMediu=path.join(__dirname,obGlobal.obImagini.cale_galerie, "mediu");
+    let caleAbsMic=path.join(__dirname,obGlobal.obImagini.cale_galerie, "mic");
     if (!fs.existsSync(caleAbsMediu))
         fs.mkdirSync(caleAbsMediu);
+    if (!fs.existsSync(caleAbsMic))
+        fs.mkdirSync(caleAbsMic);
 
     //for (let i=0; i< vErori.length; i++ )
     for (let imag of vImagini){
         [numeFis, ext]=imag.cale_relativa.split(".");
         let caleFisAbs=path.join(caleAbs,imag.cale_relativa);
         let caleFisMediuAbs=path.join(caleAbsMediu, numeFis+".webp");
+        let caleFisMicAbs=path.join(caleAbsMic, numeFis+".webp");
         sharp(caleFisAbs).resize(400).toFile(caleFisMediuAbs);
+        sharp(caleFisAbs).resize(150).toFile(caleFisMicAbs);
         imag.cale_relativa_mediu=path.join("/", obGlobal.obImagini.cale_galerie, "mediu",numeFis+".webp" )
+        imag.cale_relativa_mic=path.join("/", obGlobal.obImagini.cale_galerie, "mic",numeFis+".webp" )
         imag.cale_relativa=path.join("/", obGlobal.obImagini.cale_galerie, imag.cale_relativa )
         //eroare.imagine="/"+obGlobal.obErori.cale_baza+"/"+eroare.imagine;
     }

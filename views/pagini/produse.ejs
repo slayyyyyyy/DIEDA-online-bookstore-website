@@ -4,6 +4,7 @@
         <meta name="keywords" content="librarie online, dieda, carti ieftine, totebag, board games, figurine, oferte, promotii, reduceri, merch, albume"><!--cuvintele cheie ale paginii; majoritatea motoarelor de căutare ignoră keywords -->
         <meta name="description" content="Site-ul online al librăriei Dieda. Comandă-ți cărțile și albumele preferate cu livrare gratuită la comenzi peste 75 de lei."><!-- descrierea paginii, adesea apare sub link când sunt afișate rezultatele căutării -->
         <%-include("../fragmente/head.ejs") %>
+        <script type="text/javascript" src="/resurse/js/produse.js"></script>
         <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
         <title>DIEDA - home</title>
            
@@ -15,26 +16,6 @@
 
     <main>
         <label> Nume: <input type="text" id="inp-nume"></label>
-        <div> Categorie:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
-            <p><label>Cărți
-                <input id="i_rad1"  name="gr_rad" value="carte" type="radio"/>
-            </label></p>
-            <p><label>Albume
-                <input id="i_rad2"  name="gr_rad" value="album" type="radio"/>
-            </label>
-            <p><label>Merchandise
-                <input id="i_rad3" name="gr_rad" value="merch" type="radio"/>
-            </label>
-            <p><label>Școlărești
-                <input id="i_rad4" name="gr_rad" value="scolar" type="radio"/>
-            </label>
-            <p><label>Boardgames
-                <input id="i_rad5" name="gr_rad" value="boardgame" type="radio"/>
-            </label>
-            <p><label>Toate
-                <input id="i_rad6" checked name="gr_rad" value="toate" type="radio"/>
-            </label>
-        </div>
 
 
         <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="70"> <span id="infoRange">(0)</span></label>

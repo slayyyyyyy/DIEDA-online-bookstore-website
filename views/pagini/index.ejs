@@ -31,7 +31,7 @@
         <p>Librăria noastră vă oferă o gamă variată de produse, ca orice altă librărie online, doar că noi avem prețuri mai mici. Puteți găsi la noi cărți ieftine până în 50 de lei <s>fiindcă nu avem adaos comercial de 300%</s>, căni <i lang="en">affordable</i> cu Hello Kitty și perne cu Minecraft. Avem și caiete cu Pucca. <a class="link" href="https://s13emagst.akamaized.net/products/42675/42674016/images/res_006cdb77adaaeb21d5be63fcf927230a.jpg" target="_blank">Exemplu de caiet cu Pucca</a></p>
         <section id="carti">
             <h3>Cărțile noastre</h3>
-            <h3 id="efect-css-reflexie-text">Cartile noastre</h3>
+            <h3 class="efect-css-reflexie-text">Cartile noastre</h3>
             <p>Veți găsi pe site-ul nostru o <strong>varietate</strong> de genuri de cărți și o <strong>varietate</strong> de reduceri:</p>
             <ol>
                 <li>Ficțiune
@@ -57,22 +57,22 @@
         </section>
         <section id="albume">
             <h3>Albumele noastre</h3>
-            <h3 id="efect-css-reflexie-text">Albumele noastre</h3>
+            <h3 class="efect-css-reflexie-text">Albumele noastre</h3>
             <p>Vindem și albume pe <abbr title="discuri compacte">CD</abbr>, și albume pe vinyl!</p>
         </section>
         <section id="boardgames">
         <h3>Jocuri de societate</h3>
-        <h3 id="efect-css-reflexie-text">Jocuri de societate</h3>
+        <h3 class="efect-css-reflexie-text">Jocuri de societate</h3>
         <p>Board games pe placul vostru! Avem în special toate tipurile de UNO și de remi; n-o să găsiți, însă, Catan pe site-ul nostru.</p>
         </section>
         <section id="merch">
             <h3>Merchandise</h3>
-            <h3 id="efect-css-reflexie-text">Merchandise</h3>
+            <h3 class="efect-css-reflexie-text">Merchandise</h3>
             <p>În cazul în care sunteți fani înfocați a orice există la noi pe stoc, zona de merchandise de pe site-ul nostru vă pune la dispoziție produse cu licență <i lang="en">overpriced</i> ca să vă simțiți adevărați fani! Avem figurine, poate un totebag, și le puteți găsi chiar și în ofertele noastre!</p>
         </section>
         <section id="scolar">
             <h3>Școlărești</h3>
-            <h3 id="efect-css-reflexie-text">Scolaresti</h3>
+            <h3 class="efect-css-reflexie-text">Scolaresti</h3>
             <p>Puteți să găsiți pe site-ul nostru și rechizite școlare, dar, <strong>foarte important</strong>, avem pixulețe din astea:</p>
             <figure>
                 <img src="/resurse/imagini/pixuri.jpg" alt="pixuri cu sclipici">
@@ -218,7 +218,7 @@
     </section>
     <section id="cont">
         <h2>Cont de utilizator</h2>
-        <p>Contul de utilizator facilitează navigarea pe site-ul nostru și vă puteți aduna și utiliza punctele de fidelitate!</p>
+        <p>Contul de utilizator facilitează navigarea pe site-ul nostru și vă puteți aduna și utiliza punctele de fidelitate!</p><hr>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies, nunc et vehicula fringilla, odio ante feugiat enim, imperdiet viverra erat arcu eget risus. Nam ultricies tristique interdum. Pellentesque euismod gravida turpis viverra tempor. Morbi gravida, felis vitae rutrum bibendum, lectus nisl egestas nisi, id consectetur orci dui nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eleifend ex non feugiat posuere. Morbi sit amet commodo leo. Ut vehicula, odio quis fermentum pellentesque, nisl mi porta ipsum, a egestas nunc eros at est. Duis tempor mi in sapien eleifend scelerisque. Cras varius libero eu nunc bibendum, placerat dignissim ante sagittis. Curabitur eu leo enim.
 
             In id iaculis ex. In fermentum eros quis odio scelerisque, in pellentesque arcu accumsan. Curabitur est est, rhoncus vitae faucibus nec, pharetra eget tellus. Aenean non volutpat justo. Praesent non tortor non mi sollicitudin pretium. Duis tempus leo et blandit ultricies. Vivamus vitae odio vel sapien pretium rhoncus. Morbi vel congue mauris, ut porta quam. Vestibulum rutrum tristique quam, ac auctor dui ultricies ut. Donec elit dui, dictum porttitor augue ac, condimentum venenatis urna.</p>
@@ -247,6 +247,7 @@ if (imag.timp && imag.timp.includes(currentTimePeriod)){
                 <figure>
                     <picture>
                         <source srcset="<%- imag.cale_relativa_mediu %>" media="(max-width:1000px)" />
+                        <source srcset="<%- imag.cale_relativa_mic %>" media="(max-width:700px)" />
                                 <img id="imagine-galerie" src="<%- imag.cale_relativa %>" alt="imagine">
                     </picture>
                     <figcaption><%- imag.nume %></figcaption>
